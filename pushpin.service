@@ -1,0 +1,16 @@
+[Unit]
+Description=HTTP reverse proxy server for streaming and long-polling services
+Documentation=man:pushpin(1)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/stdbuf -oL /usr/bin/pushpin
+ExecReload=/bin/kill -HUP $MAINPID
+User=pushpin
+SyslogIdentifier=pushpin
+Restart=always
+LimitNOFILE=1010000
+
+[Install]
+WantedBy=multi-user.target
