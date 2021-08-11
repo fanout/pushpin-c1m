@@ -9,7 +9,7 @@
 ## Requirements
 
 * A Linux server with at least 8 CPU cores and 32GB memory. For example, DigitalOcean's `g-8vcpu-32gb` droplet type.
-* Ubuntu 20.04. However, the instructions should be easy to adapt to other distributions.
+* Ubuntu 20.04. However, the instructions should be adaptable to other distributions.
 
 ## Limitations
 
