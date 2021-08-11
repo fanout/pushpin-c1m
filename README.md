@@ -13,9 +13,9 @@
 
 ## Limitations
 
-For now, the goal is to handle lots of connections that are mostly quiet, using the HTTP transport.
+For now, the goal is to handle lots of connections that are mostly quiet, without large broadcasts, using the HTTP transport.
 
-A valid use-case for lots of connections with limited throughput could be a chat room service with 10,000 rooms, each with 100 participants. With the default `message_hwm` (25,000), up to 250 rooms could generate a message at the same time without drops or extra latency.
+A valid use-case for lots of connections without large broadcasts could be a chat room service with 10,000 rooms, each with 100 participants. With the default `message_hwm` (25,000), up to 250 rooms could generate a message at the same time without drops or extra latency.
 
 If you need greater throughput, run more than one instance.
 
@@ -111,6 +111,7 @@ sudo systemctl daemon-reload
 In `/etc/pushpin/pushpin.conf`, ensure the following fields are set:
 
 ```
+stats_connection_ttl=600
 http_port=8000,8001,8002,8003,8004,8005,8006,8007
 client_buffer_size=4096
 client_maxconn=1001000
