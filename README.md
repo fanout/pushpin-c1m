@@ -138,7 +138,7 @@ It should now be possible to make a request that hangs open:
 ```sh
 $ curl http://server:8000/stream.php?topic=test
 event: message
-data: stream opened
+data: stream open
 ...
 ```
 
